@@ -7,16 +7,15 @@ export default function SearchEngine() {
   let [photos, setPhotos] = useState(null);
   let [loaded, setLoaded] = useState(false);
 
-  function handleGalleryResponse(response) {
-    console.log(response.data);
-
-    setPhotos(response.data);
+  function handlePexelsResponse(response) {
+    setPhotos(response.data.photos);
   }
   function search() {
-    const apiKey = "8b07dt8e17fee9f438eo54a03e745179";
-
-    let apiUrl = `https://api.shecodes.io/images/v1/search?query=${keyword}&key=${apiKey}&per_page=6`;
-    axios.get(apiUrl).then(handleGalleryResponse);
+    let pexelsApiKey =
+      "Vqw9yBXhD6KlaBaN1RnFSrjFVGjQW7M1Sv5tKIY17tPQIzt45rBoGyxA";
+    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=9`;
+    let headers = { Authorization: `${pexelsApiKey}` };
+    axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
   }
   function handleSubmit(event) {
     event.preventDefault();
