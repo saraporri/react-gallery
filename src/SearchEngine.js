@@ -12,44 +12,44 @@ export default function SearchEngine() {
 
     setPhotos(response.data);
   }
-  function search() {    const apiKey = "8b07dt8e17fee9f438eo54a03e745179";
+  function search() {
+    const apiKey = "8b07dt8e17fee9f438eo54a03e745179";
 
-    let apiUrl=`https://api.shecodes.io/images/v1/search?query=${keyword}&key=${apiKey}&per_page=6`;
-    axios.get(ApiUrl).then(handleGalleryResponse);
+    let apiUrl = `https://api.shecodes.io/images/v1/search?query=${keyword}&key=${apiKey}&per_page=6`;
+    axios.get(apiUrl).then(handleGalleryResponse);
   }
   function handleSubmit(event) {
     event.preventDefault();
-    
+
     search();
   }
   function handleKeywordChange(event) {
     setKeyword(event.target.value);
   }
-}
+
   function load() {
     setLoaded(true);
     search();
   }
 
-
-if (loaded) {
-  return (
-    <div className="Search">
-      <h1>Find Images</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="search"
-          className="search"
-          placeholder="Search images..."
-          value={keyword}
-          onChange={handleKeywordChange}
-        />
-      </form>
+  if (loaded) {
+    return (
+      <div className="Search">
+        <h1>Find Images</h1>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="search"
+            className="search"
+            placeholder="Search images..."
+            value={keyword}
+            onChange={handleKeywordChange}
+          />
+        </form>
         <Photos photos={photos} />
-    </div>
-  );
-} else {
-  load();
-  return "Loading";
-}
+      </div>
+    );
+  } else {
+    load();
+    return "Loading";
+  }
 }
