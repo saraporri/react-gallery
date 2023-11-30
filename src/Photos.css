@@ -1,0 +1,9 @@
+.image {
+  max-width: 65%;
+  padding: 10px;
+  border-radius: 25px;
+  transition: 400ms ease-in-out;
+}
+.image:hover {
+  max-width: 100%;
+}
