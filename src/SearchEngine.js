@@ -19,7 +19,6 @@ export default function SearchEngine() {
   }
   function handleSubmit(event) {
     event.preventDefault();
-
     search();
   }
   function handleKeywordChange(event) {
@@ -28,27 +27,31 @@ export default function SearchEngine() {
 
   function load() {
     setLoaded(true);
+
     search();
   }
 
   if (loaded) {
     return (
       <div className="Search">
-        <h1>Find Images</h1>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="search"
-            className="search"
-            placeholder="Search images..."
-            value={keyword}
-            onChange={handleKeywordChange}
-          />
-        </form>
+        <div className="form">
+          <h1>Find Images</h1>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="search"
+              className="search"
+              placeholder="Search images..."
+              value={keyword}
+              onChange={handleKeywordChange}
+            />
+          </form>{" "}
+        </div>
+
         <Photos photos={photos} />
       </div>
     );
   } else {
     load();
-    return "Loading";
+    return null;
   }
 }
