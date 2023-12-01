@@ -1,14 +1,18 @@
-.search,
-button {
+input {
   border-radius: 10px;
   margin-bottom: 50px;
 }
 .form {
-  background-color: white;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
+    url(Images/photo.jpeg);
+  background-position: center center;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px;
 }
 h1 {
+  font-size: 100px;
+  color: #fff;
   padding: 50px;
-}
-Photos {
-  margin-top: 50px;
 }

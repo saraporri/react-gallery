@@ -35,7 +35,7 @@ export default function SearchEngine() {
     return (
       <div className="Search">
         <div className="form">
-          <h1>Find Images</h1>
+          <h1>Photo Gallery</h1>
           <form onSubmit={handleSubmit}>
             <input
               type="search"
