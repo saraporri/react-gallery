@@ -11,3 +11,10 @@
 .image:hover {
   max-width: 100%;
 }
+
+.image:hover + .caption {
+  display: block;
+}
+.caption {
+  display: none;
+}
