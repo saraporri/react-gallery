@@ -14,6 +14,9 @@ export default function Photos(props) {
                   className="img-fluid image"
                   alt={photo.alt}
                 />
+                <div className="overlay">
+                  <p className="caption">{photo.alt}</p>
+                </div>
               </div>
             );
           })}
