@@ -14,6 +14,7 @@ html {
   scroll-behavior: smooth;
 }
 footer {
+  font-family: "Times New Roman", Times, serif;
   padding: 50px;
-  font-size: 15px;
+  font-size: 12px;
 }
