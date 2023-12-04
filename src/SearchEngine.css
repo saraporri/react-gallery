@@ -10,9 +10,14 @@ input {
   background-repeat: no-repeat;
   background-size: cover;
   padding: 100px;
+  text-align: center;
+  padding: 200px auto;
+  margin: 0;
 }
 h1 {
   font-size: 100px;
   color: #fff;
   padding: 50px;
+  font-family: "Lora", serif;
+  text-shadow: 0 0 15px white;
 }
